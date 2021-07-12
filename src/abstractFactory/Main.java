@@ -12,8 +12,8 @@ public class Main {
         AbstractFactory factory = AbstractFactory.getFactory(Type.BMW);
         Car BMWCar = factory.createCar();
         Motorcycle BMWMoto = factory.createMotorcycle();
-        System.out.println(BMWMoto);
         System.out.println(BMWCar);
+        System.out.println(BMWMoto);
 
         factory = AbstractFactory.getFactory(Type.HONDA);
 

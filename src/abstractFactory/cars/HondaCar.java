@@ -1,5 +1,7 @@
 package abstractFactory.cars;
 
+import abstractFactory.cars.Car;
+
 public class HondaCar extends Car {
 
     public HondaCar() {
