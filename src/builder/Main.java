@@ -4,6 +4,9 @@ import builder.burguerBuilders.BurgerDirector;
 import builder.burguerBuilders.HamburgerBuilder;
 import builder.burguerBuilders.TraditionalBurger;
 import builder.burguerBuilders.VeggieBurger;
+import builder.churrosBuilders.ChocolateChurros;
+import builder.churrosBuilders.ChurrosDirector;
+import builder.churrosBuilders.DulceDeLecheChurros;
 import builder.pizzaBuilders.ChickenPizzaBuilder;
 import builder.pizzaBuilders.HamPizzaBuilder;
 import builder.pizzaBuilders.PizzaDirector;
@@ -35,5 +38,16 @@ public class Main {
         pizzaWaiter.setPizzaBuilder( new ChickenPizzaBuilder());
         pizzaWaiter.constructPizza();
         System.out.println(pizzaWaiter.getPizza());
+
+        System.out.println("-#-#-#- New Order -#-#-#- \n ");
+
+        ChurrosDirector churrosWaiter = new ChurrosDirector();
+        churrosWaiter.setChurrosBuilder(new DulceDeLecheChurros());
+        churrosWaiter.constructChurros();
+        System.out.println(churrosWaiter.getChurros());
+
+        churrosWaiter.setChurrosBuilder(new ChocolateChurros());
+        churrosWaiter.constructChurros();
+        System.out.println(churrosWaiter.getChurros());
     }
 }
