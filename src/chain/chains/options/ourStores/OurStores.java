@@ -15,22 +15,30 @@ public class OurStores implements Chain {
     }
 
     @Override
-    public void serviceOptions() {
+    public void serviceOptions(){
         switch (selectOption()) {
+            case 0:{
+                System.exit(0);
+                break;
+            }
             case 1: {
                 setNextChain(new BrazilStores());
                 nextInChain.serviceOptions();
+                break;
             }
             case 2: {
                 setNextChain(new USAStore());
                 nextInChain.serviceOptions();
+                break;
             }
             case 3:{
                 serviceOptions();
+                break;
             }
             case 4:{
                 setNextChain(new FirstService());
                 nextInChain.serviceOptions();
+                break;
             }
             default: {
                 System.out.println("Invalid option, finishing this call");
@@ -49,6 +57,7 @@ public class OurStores implements Chain {
         System.out.println("-> If you live in USA, press 2;");
         System.out.println("-> To repeat, press 3.");
         System.out.println("-> To comeback to the previous menu press 4");
+        System.out.println("-> To finish this attendance press 0.");
 
         System.out.print("Your option -> ");
         option = scan.nextInt();

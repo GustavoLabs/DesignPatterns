@@ -14,8 +14,8 @@ public class BrazilStores implements Chain {
     }
 
     @Override
-    public void serviceOptions() {
-        if(selectOption().equals("1")){
+    public void serviceOptions(){
+        if(selectOption() == 1){
             setNextChain(new OurStores());
             nextInChain.serviceOptions();
         } else {
@@ -24,15 +24,15 @@ public class BrazilStores implements Chain {
 
     }
 
-    public String selectOption(){
+    public int selectOption(){
         Scanner scan = new Scanner(System.in);
-        String option;
+        int option;
         System.out.println("We have a store in Nova Odessa, whose address is: Rua Principal, 999 - Center");
         System.out.println("We also have a store in Campinas, whose address is: Rua Principal, 12314 - Center");
-        System.out.println("To finish this call press 0 ans to comeback to the previous menu press 1 ");
+        System.out.println("To finish this attendance press 0 and to comeback to the previous menu press 1 ");
 
         System.out.print("Your option -> ");
-        option = scan.nextLine();
+        option = scan.nextInt();
         return option;
     }
 }

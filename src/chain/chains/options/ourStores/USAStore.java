@@ -14,7 +14,7 @@ public class USAStore implements Chain {
     }
 
     @Override
-    public void serviceOptions() {
+    public void serviceOptions(){
         if(selectOption().equals("1")){
             setNextChain(new OurStores());
             nextInChain.serviceOptions();
