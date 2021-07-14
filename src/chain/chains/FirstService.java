@@ -1,6 +1,8 @@
 package chain.chains;
 
 import chain.chains.options.ourStores.OurStores;
+import chain.chains.options.trackOrder.TrackInfo;
+import chain.chains.options.plans.OurPlans;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -23,14 +25,31 @@ public class FirstService implements Chain {
     }
 
     @Override
-    public void serviceOptions() {
+    public void serviceOptions(){
         switch (FirstServiceOptions()) {
+            case 0:{
+                System.exit(0);
+                break;
+            }
             case 1: {
                 setNextChain(new OurStores());
                 nextInChain.serviceOptions();
+                break;
             }
             case 2: {
-
+                setNextChain(new TrackInfo());
+                nextInChain.serviceOptions();
+                break;
+            }
+            case 3: {
+                setNextChain(new OurPlans());
+                nextInChain.serviceOptions();
+                break;
+            }
+            default:{
+                System.out.println("Invalid option, finishing the attendance");
+                System.exit(0);
+                break;
             }
         }
     }
@@ -44,6 +63,8 @@ public class FirstService implements Chain {
         System.out.println("-> 2 - Track your order");
         System.out.println("-> 3 - Details of ours plans");
         System.out.println("-> 4 - Repeat the options");
+        System.out.println("-> 0 - Finish this attendance.");
+
         System.out.print("Your option -> ");
         option = scan.nextInt();
         return option;
